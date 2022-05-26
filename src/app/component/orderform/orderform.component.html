@@ -1,0 +1,58 @@
+<h1>Order Pizza</h1>
+
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #itemForm="ngForm">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Select size</label>
+        </div>
+        <select class="custom-select" id="size" name="size" required #size="ngModel" [(ngModel)]="item.size">
+          <option selected>Choose...</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="base">Select base</label>
+        </div>
+        <select class="custom-select" id="base" name="base" required #base="ngModel" [(ngModel)]="item.base">
+          <option selected>Choose...</option>
+          <option value="classic">Classic Crust</option>
+          <option value="cheesy">Cheesy Crust</option>
+          <option value="thin">Thin Crust</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="topping">Select topping</label>
+        </div>
+        <select class="custom-select" id="topping" name="topping" required #topping="ngModel" [(ngModel)]="item.topping">
+          <option selected>Choose...</option>
+          <option value="hamcheese">Ham and Cheese</option>
+          <option value="pepperoni">Pepperoni</option>
+          <option value="italian">Italian</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="quantity">Quantity</span>
+        </div>
+        <input type="text" aria-label="Quantity"
+                [(ngModel)]="item.quantity" 
+                class="form-control" 
+                id="quantity" 
+                name="quantity" 
+                required #quantity="ngModel">
+      </div>
+
+      <button type="submit" [disabled]="!itemForm.form.valid" 
+            class="btn btn-info" (click)="displayUserForm()">Next</button>
+  </form>
+  </div>
+</div>

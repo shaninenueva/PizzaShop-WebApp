@@ -1,0 +1,29 @@
+<h1>List of Orders</h1>
+
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Order Number</th>
+                <th scope="col">Date and Time</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">Delivery Method</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let order of orders">
+                <td>{{order.orderNumber}}</td>
+                <td>{{order.orderDateTime}}</td>
+                <td>{{order.customerID}}</td>
+                <td>{{order.totalAmount}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.deliveryMethod}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    
