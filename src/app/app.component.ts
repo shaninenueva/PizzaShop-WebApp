@@ -1,7 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Order } from './order';
-import { OrderService } from './order.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +6,10 @@ import { OrderService } from './order.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit{
-  
-  public orders: Order[] = [];
-  constructor(private orderService: OrderService){}
+export class AppComponent{
+  title: string;
 
-  ngOnInit() {
-    this.getOrders;
+  constructor() {
+    this.title = 'Heaven Pizza';
   }
-
-  public getOrders(): void {
-    this.orderService.getOrders().subscribe(
-      (response: Order[]) => {
-        this.orders = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  };
 }
