@@ -4,18 +4,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OrderService } from './order.service';
+import { UserService } from './services/user.service';
+import { OrderformComponent } from './component/orderform/orderform.component';
+import { OrderlistComponent } from './component/orderlist/orderlist.component'
+import { FormsModule } from '@angular/forms';
+import { OrderService } from './services/order.service';
+import { UserformComponent } from './component/userform/userform.component';
+import { ItemService } from './services/item.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrderformComponent,
+    OrderlistComponent,
+    UserformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [OrderService],
+  providers: [OrderService, UserService, ItemService],
   bootstrap: [AppComponent]
 })
 
